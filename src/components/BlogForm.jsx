@@ -1,21 +1,21 @@
-import React, { Suspense, useState } from 'react'
+import React, { useState } from 'react'
 
-const BlogForm = ({createBlog}) => {
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
-    const [url, setUrl] = useState('')
+const BlogForm = ({ createBlog }) => {
+  const [title, setTitle] = useState('')
+  const [author, setAuthor] = useState('')
+  const [url, setUrl] = useState('')
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        createBlog({
-            title,
-            author,
-            url
-        })
-        setTitle('')
-        setAuthor('')
-        setUrl('')
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    createBlog({
+      title,
+      author,
+      url
+    })
+    setTitle('')
+    setAuthor('')
+    setUrl('')
+  }
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -48,7 +48,7 @@ const BlogForm = ({createBlog}) => {
           />
         </label>
       </div>
-      <button type="submit">Save Blog</button>
+      <button type="submit">Create</button>
     </form>
   )
 }
